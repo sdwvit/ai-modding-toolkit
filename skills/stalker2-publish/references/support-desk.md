@@ -15,7 +15,6 @@ Voiced dialogs, radio or SFX: the cooked event `.uasset`s alone are not enough t
 build came back with subtitles and no voice. Also ship the mod's `S2_WwiseProject` folder in the plugin folder, and the
 source WAVs at the path the `.wproj` Originals setting resolves to from the kit root (for example
 `O/Voices/<language>/<Mod>/`). Before uploading, list the zip and check that the `.wwu` files and WAVs are in it.
-Expect about 185 MB for two languages.
 
 ## mod.io description links
 The description is a rich-text editor whose auto-linker cuts a typed URL at `?` or `-` (a link ended up pointing at
