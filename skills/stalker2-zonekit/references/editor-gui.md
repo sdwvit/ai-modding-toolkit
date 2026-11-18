@@ -64,8 +64,9 @@ Big graph changes go in as a block of nodes the user pastes, then one or two wir
   is the same in every material, so a template (a CollectionParameter, a TextureObject) can come from another material's copy.
 - Pin names in that text: a VectorParameter's alpha output is `Output5`; WorldPosition's output is `XYZ`.
 - Give each Custom node a Description: it is the title the user sees, and how you find the node again later.
-- Import textures as 8-bit PNGs. A 16-bit PNG imports as linear 16-bit and looks washed out in game. ImageMagick writes
-  16-bit for some inputs (an `xc:` canvas) unless given `-depth 8` (verified in game, 2.0).
+- Import colour textures as 8-bit PNGs. A 16-bit PNG imported as linear 16-bit and looked washed out in game (seen on
+  one colour texture; masks and other data textures untested). ImageMagick writes
+  16-bit for some inputs (an `xc:` canvas) unless given `-depth 8` (2.0).
 - A TextureObject's SamplerType must match the texture (an sRGB colour texture: leave the property out).
 - A second parameter node with the same name (and default) shares the live value: a pasted block can read an existing dial.
 - Replacing a block: the user deletes the old block's nodes first, then pastes. Leftover parameter nodes with the same names but
