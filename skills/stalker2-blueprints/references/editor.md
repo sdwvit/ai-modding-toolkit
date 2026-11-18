@@ -65,6 +65,9 @@ Upstream has a small editor script for each; they depend on its own runner, so w
   `save_directory("/<Mod>", only_if_is_dirty=True, recursive=True)`. List the referencers first
   (`asset_registry.get_referencers(SRC, unreal.AssetRegistryDependencyOptions())`). Afterwards open and Compile every
   referencer (compiled bytecode is stale until then) and re-check pins: a K2 pin default once failed to follow a rename.
+- A string typed into a Blueprint node pin is compiled into the Blueprint's bytecode, so a plain export-string edit of
+  the cooked `.uasset` does not change it. Edit it in the editor and recompile; an offline patch has to be a same-length
+  byte swap (pad with spaces).
 - **Set one class default on a Blueprint** (values awkward to enter in the UI, such as a soft class path):
   `cdo = unreal.get_default_object(unreal.load_class(None, "<BP path>.<BP name>_C"))`, `cdo.set_editor_property(PROP, v)`,
   `save_asset(BP, only_if_is_dirty=False)`. For `v` try `unreal.load_class(None, VALUE)`, then

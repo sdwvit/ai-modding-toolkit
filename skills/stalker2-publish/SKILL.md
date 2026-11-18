@@ -66,6 +66,7 @@ This section: Adapted from the Stalker 2 modding harness by Noah Semus (github.c
    (`<Mod>.uplugin`, `Content/` with the `.uasset`s and loose `.cfg`s, `Resources/`) at the zip root. The user
    uploads it somewhere "anyone with the link can view" (the form asks for a Google Drive URL). Asset mods reach
    about 125 MB. The request is not filed without the link.
+   Mods with Wwise audio need more in the zip: references/support-desk.md.
 3. **No missing-asset warnings.** If the last cook logged missing-asset warnings, sort that out first: the form
    asks the user to confirm there are none.
 4. **One ticket per mod.** The user opens their tickets list (signed in) and searches for the mod name (subjects

@@ -10,6 +10,17 @@ The Zone Kit support desk is `https://zonekit-support.stalker2.com`. The user's 
 (`/en-US/support/tickets`), and the new-ticket form is the create page there (`.../support/tickets/create`). Older
 Zendesk form links no longer work.
 
+## Source zip for a mod with Wwise audio
+Voiced dialogs, radio or SFX: the cooked event `.uasset`s alone are not enough to build Xbox soundbanks, and one such
+build came back with subtitles and no voice. Also ship the mod's `S2_WwiseProject` folder in the plugin folder, and the
+source WAVs at the path the `.wproj` Originals setting resolves to from the kit root (for example
+`O/Voices/<language>/<Mod>/`). Before uploading, list the zip and check that the `.wwu` files and WAVs are in it.
+Expect about 185 MB for two languages.
+
+## mod.io description links
+The description is a rich-text editor whose auto-linker cuts a typed URL at `?` or `-` (a link ended up pointing at
+the wrong page). Paste links as `<a href>` anchors in HTML, or check every link after saving.
+
 ## Xbox build request form
 | Field (`*` = required) | Value |
 |---|---|

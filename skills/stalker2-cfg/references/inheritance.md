@@ -87,6 +87,11 @@ Sign: `EXCEPTION_STACK_OVERFLOW` while cfg loads. Both shapes come from the fiel
 - **`PreinstalledAttachmentsItemPrototypeSIDs`: never bpatch a single entry.** A partial bpatch replaced the whole
   list in game and stripped weapons' hidden built-in magazines and silencers (verified in game). Re-emit the full
   list without bpatch, keeping vanilla's `bskipref` entry.
+- **Never put `X {bpatch}` and a struct with `refkey=X` in the same patch file.** The refkey resolved to the bpatch
+  block (only its patched fields), not to the vanilla `X` (verified in game, 2.0). For an ObjPrototype that drops
+  `AgentType` from the chain, and the game crashed with an access violation on load or when the NPC spawned, with no
+  log line. Fix: give the new struct the vanilla `refurl`/`refkey` of `X` and restate the bpatched fields in it, or
+  (untested) move the bpatch to another file.
 - Some lists are parallel arrays indexed together (consumable `EffectPrototypeSIDs` / `EffectsDisplayTypes` /
   `ShouldShowEffects`): keep their indices aligned.
 - `{bskipref}` appears to mark a struct or value that skips the inherited content (meaning inferred; vanilla
